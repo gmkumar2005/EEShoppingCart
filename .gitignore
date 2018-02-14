@@ -3,7 +3,7 @@
 target
 ideatarget
 .target
-bin
+#bin
 # sbt specific
 .cache
 .history
