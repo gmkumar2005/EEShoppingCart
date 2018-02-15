@@ -32,9 +32,8 @@ class AddProductsSpec extends FeatureSpec with GivenWhenThen with Matchers {
       }
       And("the shopping cart's total price should equal 199.95")
       val expectedTotalPrice = new java.math.BigDecimal(199.95).setScale(ShoppingCart.PRICE_SCALE, java.math.BigDecimal.ROUND_HALF_UP).doubleValue
-      sc.getTotalPrice.doubleValue shouldEqual (expectedTotalPrice)
+      sc.getTotalPrice.doubleValue shouldEqual expectedTotalPrice
     }
-
 
   }
 
