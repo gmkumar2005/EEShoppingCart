@@ -28,7 +28,7 @@ class AddProductsSpec extends FeatureSpec with GivenWhenThen with Matchers {
       val actualPrice = sc.getItems.get(doveSoapId).getItemPrice.doubleValue
       actualPrice shouldEqual expectedPrice
 
-      And("the shopping cart's total price should equal 199.95")
+      And("the shopping cart s total price should equal 199.95")
       val expectedTotalPrice = new java.math.BigDecimal(199.95).setScale(ShoppingCart.PRICE_SCALE, java.math.BigDecimal.ROUND_HALF_UP).doubleValue
       sc.getTotalPrice.doubleValue shouldEqual expectedTotalPrice
     }
@@ -49,7 +49,7 @@ class AddProductsSpec extends FeatureSpec with GivenWhenThen with Matchers {
 
     Then("the shopping cart should contain 8 Dove Soaps each with a unit price of 39.99")
     sc.getItemCount should be(8)
-    And("the shopping cart’s total price should equal 319.92")
+    And("the shopping cart s total price should equal 319.92")
     val expectedTotalPrice = new java.math.BigDecimal(319.92).setScale(ShoppingCart.PRICE_SCALE, java.math.BigDecimal.ROUND_HALF_UP).doubleValue
     sc.getTotalPrice.doubleValue shouldEqual expectedTotalPrice
     val shoppingItems = sc.getItems
@@ -73,7 +73,7 @@ class AddProductsSpec extends FeatureSpec with GivenWhenThen with Matchers {
 
     When("the user adds 2 Dove Soaps to the shopping cart")
     sc.addItem(doveSoap.getProductName, doveSoap.getPrice, doveSoap.getProductId, 2)
-    And("then adds 2 Axe Deo’s to the shopping cart")
+    And("then adds 2 Axe Deo s to the shopping cart")
     sc.addItem(axeSoap.getProductName, axeSoap.getPrice, axeSoap.getProductId, 2)
     Then("The shopping cart should contain 2 Dove Soaps each with a unit price of 39.99")
     sc.getItems.get(doveSoapId).getItemQuantity should be(2)
